@@ -5,9 +5,7 @@ __pycache__/
 venv/
 .venv/
 
-# Data (large files — don't commit raw dataset)
-data/*.csv
-!data/events.csv
+# Data — both files are small enough to commit for reproducibility
 
 # Environment
 .env

@@ -1,0 +1,17 @@
+Date,Event_Name,Category,Description,Expected_Impact
+1990-08-02,Iraq Invades Kuwait,Geopolitical Conflict,Iraqi forces invade Kuwait threatening a major share of global oil supply and triggering the Gulf War crisis.,Increase
+1991-01-17,Gulf War - Operation Desert Storm Begins,Geopolitical Conflict,US-led coalition launches military action to expel Iraqi forces from Kuwait raising fears of prolonged supply disruption.,Increase
+1997-07-02,Asian Financial Crisis Begins,Economic Shock,Thailand devalues the baht triggering a regional financial crisis that sharply reduces oil demand across Asia.,Decrease
+2001-09-11,September 11 Terrorist Attacks,Geopolitical Shock,Terrorist attacks on the United States create global economic uncertainty and a temporary demand shock.,Decrease
+2003-03-20,US Invasion of Iraq,Geopolitical Conflict,United States and coalition forces invade Iraq raising concerns over Middle East supply stability.,Increase
+2008-07-11,Oil Price Peaks Above 147 USD,Market Event,Brent/WTI prices reach an all-time high driven by strong demand, a weak US dollar, and speculative activity, shortly before the global financial crisis.,Increase
+2008-09-15,Lehman Brothers Collapse - Global Financial Crisis,Economic Shock,The collapse of Lehman Brothers triggers a global financial crisis causing a sharp collapse in oil demand and prices.,Decrease
+2011-02-15,Arab Spring - Libyan Civil War Begins,Geopolitical Conflict,Civil unrest and armed conflict in Libya disrupts oil production and exports from a major OPEC producer.,Increase
+2014-11-27,OPEC Declines to Cut Production,OPEC Policy,OPEC maintains production levels despite falling prices in a strategy to defend market share against US shale producers, accelerating a price collapse.,Decrease
+2016-01-16,Iran Sanctions Lifted (JCPOA Implementation),Sanctions/Policy,International sanctions on Iran are lifted under the nuclear deal allowing Iranian oil back onto global markets.,Decrease
+2016-11-30,OPEC Vienna Agreement - Production Cuts,OPEC Policy,OPEC agrees to its first production cut in eight years in coordination with non-OPEC producers including Russia to stabilize prices.,Increase
+2018-05-08,US Withdraws From Iran Nuclear Deal,Sanctions/Policy,The United States exits the JCPOA and reimposes sanctions on Iranian oil exports, tightening global supply expectations.,Increase
+2019-09-14,Attack on Saudi Aramco Facilities,Geopolitical Conflict,Drone and missile strikes on Abqaiq and Khurais processing facilities temporarily knock out roughly half of Saudi Arabia's oil output.,Increase
+2020-03-08,Saudi-Russia Oil Price War Begins,OPEC Policy,Talks between OPEC and Russia collapse, leading Saudi Arabia to launch a price war by ramping up production and slashing prices.,Decrease
+2020-04-20,WTI Futures Turn Negative,Market Event,Collapsing demand from COVID-19 lockdowns combined with a shortage of storage capacity drives US crude futures below zero for the first time.,Decrease
+2022-02-24,Russia Invades Ukraine,Geopolitical Conflict,Russia's full-scale invasion of Ukraine triggers sanctions on Russian energy exports and major fears over global supply disruption.,Increase
