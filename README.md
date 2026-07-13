@@ -1,4 +1,4 @@
-# Brent Oil Price Change Point Analysis
+﻿# Brent Oil Price Change Point Analysis
 
 **10 Academy - AI Mastery, Week 10 Challenge**
 Analyzing how major geopolitical and economic events affect Brent crude oil prices using Bayesian change point detection.
