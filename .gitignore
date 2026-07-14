@@ -17,3 +17,5 @@ Thumbs.db
 # IDE
 .vscode/*
 !.vscode/settings.json
+
+.pytest_cache/
