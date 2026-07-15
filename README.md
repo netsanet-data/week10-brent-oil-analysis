@@ -63,6 +63,10 @@ pip install -r requirements.txt
 jupyter notebook notebooks/eda.ipynb
 ```
 
+## Interactive Dashboard (Task 3)
+
+A Flask + React dashboard is available for exploring the analysis results interactively. See `frontend/README.md` for full setup instructions. Screenshots demonstrating the working dashboard are in `/screenshots`.
+
 ## Author
 
 Netsanet — 10 Academy AI Mastery, Week 10
