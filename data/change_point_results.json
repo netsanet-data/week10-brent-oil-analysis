@@ -1,0 +1,14 @@
+{
+  "tau_date": "2005-02-23",
+  "credible_interval_lower": "2005-02-15",
+  "credible_interval_upper": "2005-03-03",
+  "mu1_mean": 21.42,
+  "mu2_mean": 75.6,
+  "pct_change": 253.0,
+  "prob_increase": 1.0,
+  "nearest_event": {
+    "name": "US Invasion of Iraq",
+    "date": "2003-03-20",
+    "days_from_changepoint": -706
+  }
+}
