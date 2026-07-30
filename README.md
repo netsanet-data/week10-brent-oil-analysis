@@ -1,5 +1,7 @@
 ﻿# Brent Oil Price Change Point Analysis
 
+[![Unit Tests](https://github.com/netsanet-data/week10-brent-oil-analysis/actions/workflows/unittests.yml/badge.svg)](https://github.com/netsanet-data/week10-brent-oil-analysis/actions/workflows/unittests.yml)
+
 **10 Academy - AI Mastery, Week 10 Challenge**
 Analyzing how major geopolitical and economic events affect Brent crude oil prices using Bayesian change point detection.
 
@@ -66,6 +68,14 @@ jupyter notebook notebooks/eda.ipynb
 ## Interactive Dashboard (Task 3)
 
 A Flask + React dashboard is available for exploring the analysis results interactively. See `frontend/README.md` for full setup instructions. Screenshots demonstrating the working dashboard are in `/screenshots`.
+
+## Week 12 Engineering Improvements
+
+Building on the Week 10 foundation, this week added:
+- **Centralized configuration** (`src/config.py`): typed `@dataclass` objects (`DataPaths`, `AnalysisConfig`, `ServerConfig`) replacing hard-coded paths and magic numbers (rolling window size, stationarity threshold, minimum event count, server port) previously scattered across `src/` and `backend/`.
+- **Integration tests** (`tests/test_app_integration.py`): 6 new tests exercising the Flask API end-to-end (routing, query-param filtering, JSON serialization) via Flask's test client, complementing the existing 12 unit tests — 18 tests total, all passing.
+- **Type hints on the API layer** (`backend/app.py`): all route handlers now have explicit return type annotations.
+- **CI badge**: build status now visible directly in this README (see top).
 
 ## Author
 

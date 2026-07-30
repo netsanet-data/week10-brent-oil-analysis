@@ -10,23 +10,26 @@ Serves three endpoints consumed by the React frontend:
 import os
 import sys
 import json
-from flask import Flask, jsonify, request
+from typing import Tuple, Union
+from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 from data_loader import load_brent_prices, load_events, DataLoadError
+from config import DATA_PATHS, SERVER_CONFIG
 
 app = Flask(__name__)
 CORS(app)
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
-PRICES_PATH = os.path.join(DATA_DIR, "BrentOilPrices.csv")
-EVENTS_PATH = os.path.join(DATA_DIR, "events.csv")
-CHANGEPOINT_PATH = os.path.join(DATA_DIR, "change_point_results.json")
+PRICES_PATH = DATA_PATHS.brent_prices_csv
+EVENTS_PATH = DATA_PATHS.events_csv
+CHANGEPOINT_PATH = DATA_PATHS.changepoint_json
+
+JsonResponse = Union[Response, Tuple[Response, int]]
 
 
 @app.route("/api/prices", methods=["GET"])
-def get_prices():
+def get_prices() -> JsonResponse:
     """
     Return historical Brent oil prices.
     Optional query params: start_date, end_date (YYYY-MM-DD).
@@ -55,7 +58,7 @@ def get_prices():
 
 
 @app.route("/api/changepoint", methods=["GET"])
-def get_changepoint():
+def get_changepoint() -> JsonResponse:
     """Return the cached Bayesian change point model results."""
     if not os.path.exists(CHANGEPOINT_PATH):
         return jsonify({"error": "Change point results not found. Run the Task 2 notebook first."}), 404
@@ -70,7 +73,7 @@ def get_changepoint():
 
 
 @app.route("/api/events", methods=["GET"])
-def get_events():
+def get_events() -> JsonResponse:
     """
     Return the researched events dataset.
     Optional query param: category (exact match).
@@ -98,10 +101,10 @@ def get_events():
 
 
 @app.route("/api/health", methods=["GET"])
-def health_check():
+def health_check() -> Response:
     """Simple health check endpoint."""
     return jsonify({"status": "ok"})
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host=SERVER_CONFIG.host, port=SERVER_CONFIG.port, debug=SERVER_CONFIG.debug)

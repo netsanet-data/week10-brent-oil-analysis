@@ -11,6 +11,8 @@ import pandas as pd
 from matplotlib.lines import Line2D
 from statsmodels.tsa.stattools import adfuller
 
+from config import ANALYSIS_CONFIG
+
 
 class AnalysisError(Exception):
     """Raised when an analysis function receives invalid input."""
@@ -85,12 +87,14 @@ def run_adf_test(series: pd.Series, label: str = "series") -> dict:
         "adf_statistic": result[0],
         "p_value": result[1],
         "critical_values": result[4],
-        "is_stationary": result[1] < 0.05,
+        "is_stationary": result[1] < ANALYSIS_CONFIG.stationarity_alpha,
     }
 
 
 def compute_rolling_volatility(
-    df: pd.DataFrame, return_col: str = "Log_Return", window: int = 30
+    df: pd.DataFrame,
+    return_col: str = "Log_Return",
+    window: int = ANALYSIS_CONFIG.rolling_volatility_window_days,
 ) -> pd.DataFrame:
     """
     Compute rolling standard deviation of returns as a volatility proxy.

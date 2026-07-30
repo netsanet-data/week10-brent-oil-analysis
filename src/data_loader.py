@@ -13,6 +13,8 @@ load_brent_prices() detects and handles both automatically.
 import os
 import pandas as pd
 
+from config import ANALYSIS_CONFIG
+
 
 class DataLoadError(Exception):
     """Raised when the Brent price or events dataset cannot be loaded or validated."""
@@ -147,10 +149,10 @@ def load_events(filepath: str) -> pd.DataFrame:
     except Exception as exc:
         raise DataLoadError(f"Failed to parse event dates: {exc}") from exc
 
-    if len(events_df) < 10:
+    if len(events_df) < ANALYSIS_CONFIG.min_required_events:
         raise DataLoadError(
             f"Events dataset has only {len(events_df)} rows; assignment "
-            f"requires a minimum of 10."
+            f"requires a minimum of {ANALYSIS_CONFIG.min_required_events}."
         )
 
     return events_df
