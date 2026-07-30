@@ -186,6 +186,30 @@ function App() {
           </tbody>
         </table>
       </div>
+
+      <div className="transparency-panel">
+        <h2>Model Transparency: Quantifying Uncertainty</h2>
+        <p className="transparency-note">
+          This model is a Bayesian change point model, not a classifier, so
+          traditional feature-attribution tools (e.g. SHAP) do not apply.
+          Instead, transparency comes from the full posterior distribution
+          below: rather than a single point estimate, the model reports a
+          <em> range</em> of plausible change point dates and price levels,
+          each with an explicit probability. A narrow, sharply peaked
+          posterior (as seen here) indicates high model confidence in the
+          detected shift.
+        </p>
+        <img
+          src="/posterior_distributions.png"
+          alt="Posterior distributions of the change point date (tau) and mean price before/after the shift"
+          className="posterior-image"
+        />
+        <p className="transparency-caption">
+          Left: posterior distribution of the change point date (tau).
+          Center: posterior distributions of mean price before (mu1) vs.
+          after (mu2). Right: posterior of the price shift (mu2 - mu1).
+        </p>
+      </div>
     </div>
   );
 }

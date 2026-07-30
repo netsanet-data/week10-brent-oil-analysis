@@ -176,3 +176,40 @@ body {
   font-weight: 600;
   white-space: nowrap;
 }
+.transparency-panel {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-top: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.transparency-panel h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1f4e79;
+}
+
+.transparency-note {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 900px;
+  margin-bottom: 18px;
+}
+
+.posterior-image {
+  width: 100%;
+  max-width: 1100px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.transparency-caption {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 10px;
+}
